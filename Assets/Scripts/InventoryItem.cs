@@ -1,10 +1,14 @@
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public string itemID;
     public enum ItemType { Head, Body, Legs, Accessory }
     public ItemType type;
 
-    public Transform parentAfterDrag;
+    [HideInInspector] public Transform parentAfterDrag;
     private Image image;
 
     void Awake() => image = GetComponent<Image>();
@@ -12,7 +16,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentAfterDrag = transform.parent;
-
 
         InventorySlot currentSlot = parentAfterDrag.GetComponent<InventorySlot>();
         if (currentSlot != null && currentSlot.isEquipmentSlot)

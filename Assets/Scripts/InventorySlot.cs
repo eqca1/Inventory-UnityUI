@@ -1,77 +1,123 @@
-﻿public class InventorySlot : MonoBehaviour, IDropHandler
+﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
+public class InventorySlot : MonoBehaviour, IDropHandler
 {
     public InventoryItem.ItemType slotType;
     public bool isEquipmentSlot;
+
+    [Header("Auto-assigned")]
     public Transform characterRoot;
+
+    private void Awake()
+    {
+
+        if (characterRoot == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null) characterRoot = player.transform;
+        }
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (transform.childCount > 0)
+        GameObject dropped = eventData.pointerDrag;
+        if (dropped == null) return;
+
+        InventoryItem newItem = dropped.GetComponent<InventoryItem>();
+        if (newItem == null) return;
+
+
+        if (isEquipmentSlot && newItem.type != slotType) return;
+
+        InventorySlot sourceSlot = newItem.parentAfterDrag.GetComponent<InventorySlot>();
+
+
+        InventoryItem existingItem = GetComponentInChildren<InventoryItem>();
+
+        if (existingItem != null)
         {
-            SwapItems(eventData.pointerDrag.GetComponent<InventoryItem>());
+
+            if (sourceSlot != null && sourceSlot.isEquipmentSlot && existingItem.type != sourceSlot.slotType) return;
+
+            existingItem.transform.SetParent(newItem.parentAfterDrag);
+            existingItem.transform.localPosition = Vector3.zero;
+
+            if (sourceSlot != null)
+            {
+                if (sourceSlot.isEquipmentSlot) sourceSlot.ActivateVisual(existingItem.itemID);
+                else sourceSlot.DeactivateVisualByItem(existingItem);
+            }
         }
         else
         {
-            PlaceItem(eventData.pointerDrag.GetComponent<InventoryItem>());
+
+            if (sourceSlot != null && sourceSlot.isEquipmentSlot && !this.isEquipmentSlot)
+            {
+                sourceSlot.DeactivateVisualByItem(newItem);
+            }
         }
-    }
-
-    private void PlaceItem(InventoryItem item)
-    {
-        if (!isEquipmentSlot || item.type == slotType)
-        {
-            item.parentAfterDrag = transform;
-            if (isEquipmentSlot) ActivateVisual(item.itemID);
-        }
-    }
-
-    private void SwapItems(InventoryItem newItem)
-    {
-        if (isEquipmentSlot && newItem.type != slotType) return;
-
-        InventoryItem existingItem = transform.GetChild(0).GetComponent<InventoryItem>();
-        InventorySlot sourceSlot = newItem.parentAfterDrag.GetComponent<InventorySlot>();
-
-        if (sourceSlot.isEquipmentSlot && existingItem.type != sourceSlot.slotType) return;
 
 
-        existingItem.transform.SetParent(newItem.parentAfterDrag);
-        existingItem.transform.localPosition = Vector3.zero;
         newItem.parentAfterDrag = transform;
 
-
-        if (sourceSlot.isEquipmentSlot) sourceSlot.ActivateVisual(existingItem.itemID);
-        if (isEquipmentSlot) ActivateVisual(newItem.itemID);
+        if (isEquipmentSlot)
+        {
+            ActivateVisual(newItem.itemID);
+        }
     }
 
     public void ActivateVisual(string id)
     {
         if (characterRoot == null) return;
 
+        Transform visual = characterRoot.Find(id);
 
 
         foreach (Transform child in characterRoot)
         {
 
-            if (child.name == id) child.gameObject.SetActive(true);
-            else if (IsSameCategory(child.name, id)) child.gameObject.SetActive(false);
+            if (slotType == InventoryItem.ItemType.Head &&
+               (child.name.Contains("Helmet") || child.name.Contains("Helm")))
+            {
+                child.gameObject.SetActive(false);
+            }
+
+
+            else if (slotType == InventoryItem.ItemType.Body &&
+                    (child.name.Contains("Chestplate") || child.name.Contains("Armor")))
+            {
+                child.gameObject.SetActive(false);
+            }
+
+
+            else if (slotType == InventoryItem.ItemType.Legs &&
+                    (child.name.Contains("Leggings") || child.name.Contains("Legs")))
+            {
+                child.gameObject.SetActive(false);
+            }
         }
+
+        visual.gameObject.SetActive(true);
     }
 
     public void DeactivateVisual()
     {
+        if (characterRoot == null) return;
 
-        if (transform.childCount > 0)
+        InventoryItem item = GetComponentInChildren<InventoryItem>();
+        if (item != null)
         {
-            string id = transform.GetChild(0).GetComponent<InventoryItem>().itemID;
-            Transform visual = characterRoot.Find(id);
+            Transform visual = characterRoot.Find(item.itemID);
             if (visual != null) visual.gameObject.SetActive(false);
         }
     }
 
-    private bool IsSameCategory(string objName, string id)
+    public void DeactivateVisualByItem(InventoryItem item)
     {
-
-        return false;
+        if (characterRoot == null) return;
+        Transform visual = characterRoot.Find(item.itemID);
+        if (visual != null) visual.gameObject.SetActive(false);
     }
 }
