@@ -94,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,6 +142,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -609,7 +635,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Armor_Head_79_0: -1926240985798626850
+      Armor_Head_79_1: -7881493822287175992
+      Armor_Head_79_10: -1439373210968759275
+      Armor_Head_79_11: 3566987077856252923
+      Armor_Head_79_12: 9093295867042064904
+      Armor_Head_79_13: 7078882770104537313
+      Armor_Head_79_14: 6453604985556153550
+      Armor_Head_79_15: 4108145529309700066
+      Armor_Head_79_16: 3220923034334781482
+      Armor_Head_79_17: -8502889572490414066
+      Armor_Head_79_18: 3554322098739807744
+      Armor_Head_79_19: 4948830744206669257
+      Armor_Head_79_2: -5354414039324927874
+      Armor_Head_79_3: 4441228934711732902
+      Armor_Head_79_4: -7694507639043088533
+      Armor_Head_79_5: -431841889638415048
+      Armor_Head_79_6: -2218874996172878694
+      Armor_Head_79_7: 8629769357245089106
+      Armor_Head_79_8: 8520426666877616107
+      Armor_Head_79_9: 3445269262549767320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

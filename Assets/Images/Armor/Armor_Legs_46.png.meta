@@ -94,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,6 +142,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -609,7 +635,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Armor_Legs_46_0: -597747336615628122
+      Armor_Legs_46_1: -5428824675602131283
+      Armor_Legs_46_10: -2106310162817917489
+      Armor_Legs_46_11: -492089860547108487
+      Armor_Legs_46_12: -4293366643512506850
+      Armor_Legs_46_13: 4209959477574899062
+      Armor_Legs_46_14: 4921198130951693363
+      Armor_Legs_46_15: 8677434028361763255
+      Armor_Legs_46_16: -7282402972868759738
+      Armor_Legs_46_17: 82913973578372390
+      Armor_Legs_46_18: -7868437420265031934
+      Armor_Legs_46_19: 7653516709283970044
+      Armor_Legs_46_2: -848880293355276379
+      Armor_Legs_46_3: -7549227023792637466
+      Armor_Legs_46_4: 5424867588642651060
+      Armor_Legs_46_5: -1966832715387340407
+      Armor_Legs_46_6: -1146358991058298453
+      Armor_Legs_46_7: 8081315820882185044
+      Armor_Legs_46_8: 5340673760090592208
+      Armor_Legs_46_9: -2251400734121040375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

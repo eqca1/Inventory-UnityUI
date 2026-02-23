@@ -94,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,6 +142,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -609,7 +635,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Acc_Shoes_24_0: 602941489777835151
+      Acc_Shoes_24_1: -3527795613510240358
+      Acc_Shoes_24_10: 807238787152698236
+      Acc_Shoes_24_11: -6534223703279849728
+      Acc_Shoes_24_12: 5157668787074559901
+      Acc_Shoes_24_13: -338219835892928260
+      Acc_Shoes_24_14: -3124119844545522025
+      Acc_Shoes_24_15: -6655017221001708837
+      Acc_Shoes_24_16: -8992428774751490995
+      Acc_Shoes_24_17: 2946767466207518836
+      Acc_Shoes_24_18: 5738880044698378227
+      Acc_Shoes_24_19: -4261563632011708825
+      Acc_Shoes_24_2: -5945785530524971653
+      Acc_Shoes_24_3: -2716588139101674612
+      Acc_Shoes_24_4: -1891535562426542286
+      Acc_Shoes_24_5: -2218671372290545794
+      Acc_Shoes_24_6: -8364595252580459162
+      Acc_Shoes_24_7: 6779900807334118838
+      Acc_Shoes_24_8: 125849509643371040
+      Acc_Shoes_24_9: -7948238424286446776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
