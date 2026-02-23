@@ -34,10 +34,26 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         InventoryItem newItem = dropped.GetComponent<InventoryItem>();
         if (newItem == null) return;
 
+
         if (isEquipmentSlot && newItem.type != slotType) return;
 
         InventorySlot sourceSlot = newItem.parentAfterDrag.GetComponent<InventorySlot>();
         InventoryItem existingItem = GetComponentInChildren<InventoryItem>();
+
+
+        if (AudioManager.instance != null)
+        {
+            if (isEquipmentSlot)
+            {
+
+                bool isAcc = (newItem.type == InventoryItem.ItemType.Accessory);
+                AudioManager.instance.PlayEquip(isAcc);
+            }
+            else
+            {
+                AudioManager.instance.PlayClick();
+            }
+        }
 
         if (existingItem != null)
         {

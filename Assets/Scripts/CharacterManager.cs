@@ -87,15 +87,35 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    [Header("Percent Display")]
+    public TMP_Text scalePercentText;
+
+    [Header("Percent Displays")]
+    public TMP_Text widthPercentText;
+    public TMP_Text heightPercentText;
+
     public void UpdateCharacterScale()
     {
         if (characterImage != null)
         {
-            float w = Mathf.Max(widthSlider.value, 0.1f);
-            float h = Mathf.Max(heightSlider.value, 0.1f);
+
+            float w = widthSlider.value;
+            float h = heightSlider.value;
 
             float currentZ = characterImage.localScale.z;
             characterImage.localScale = new Vector3(w, h, currentZ);
+
+            int widthPercent = Mathf.RoundToInt((w / 500f) * 100f);
+            if (widthPercentText != null)
+            {
+                widthPercentText.text = widthPercent + "%";
+            }
+
+            int heightPercent = Mathf.RoundToInt((h / 500f) * 100f);
+            if (heightPercentText != null)
+            {
+                heightPercentText.text = heightPercent + "%";
+            }
         }
     }
 }
