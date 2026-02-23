@@ -50,10 +50,9 @@
 
 > [!NOTE]
 > Programmas jaunāko versiju var lejupielādēt sadaļā [**Releases**](https://github.com/eqca1/Inventory-UnityUI/releases).
-
+> Jūs varat izmēģināt arī WEB versiju [**Šeit**](https://eqca1.github.io/WEBinv/).
 
 
 > [!CAUTION]
-
 > :octocat:
 
