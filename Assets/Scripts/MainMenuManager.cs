@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-
+    void Awake() { DontDestroyOnLoad(this.gameObject); }
     public void StartGame()
     {
 

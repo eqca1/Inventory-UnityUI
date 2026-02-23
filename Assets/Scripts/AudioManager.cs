@@ -1,28 +1,44 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    [Header("Music")]
+    [Header("Music Settings")]
     public AudioSource musicSource;
 
-    [Header("SFX")]
+    [Header("SFX Settings")]
     public AudioSource sfxSource;
-    public AudioClip clickSound;
+    public AudioClip[] clickSounds;
     public AudioClip equipArmorSound;
     public AudioClip equipAccessorySound;
+    public AudioClip applySound;
+    public AudioClip TerrariaLogo;
 
     void Awake()
     {
-        if (instance == null) { instance = this; DontDestroyOnLoad(gameObject); }
-        else { Destroy(gameObject); }
+        instance = this;
     }
 
-    public void PlayClick() => sfxSource.PlayOneShot(clickSound);
+    public void PlayClick()
+    {
+        if (clickSounds.Length > 0)
+            sfxSource.PlayOneShot(clickSounds[Random.Range(0, clickSounds.Length)]);
+    }
+
+    public void PlayApply()
+    {
+        if (applySound != null) sfxSource.PlayOneShot(applySound);
+    }
+
+    public void PlayLOGO()
+    {
+        if (TerrariaLogo != null) sfxSource.PlayOneShot(TerrariaLogo);
+    }
 
     public void PlayEquip(bool isAccessory)
     {
-        sfxSource.PlayOneShot(isAccessory ? equipAccessorySound : equipArmorSound);
+        AudioClip clip = isAccessory ? equipAccessorySound : equipArmorSound;
+        if (clip != null) sfxSource.PlayOneShot(clip);
     }
 }

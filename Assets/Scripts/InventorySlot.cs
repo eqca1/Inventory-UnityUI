@@ -49,14 +49,22 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 bool isAcc = (newItem.type == InventoryItem.ItemType.Accessory);
                 AudioManager.instance.PlayEquip(isAcc);
             }
+            else if (sourceSlot != null && sourceSlot.isEquipmentSlot)
+            {
+
+                bool isAcc = (newItem.type == InventoryItem.ItemType.Accessory);
+                AudioManager.instance.PlayEquip(isAcc);
+            }
             else
             {
+
                 AudioManager.instance.PlayClick();
             }
         }
 
         if (existingItem != null)
         {
+
             if (sourceSlot != null && sourceSlot.isEquipmentSlot && existingItem.type != sourceSlot.slotType) return;
 
             existingItem.transform.SetParent(newItem.parentAfterDrag);
@@ -70,6 +78,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         }
         else
         {
+
             if (sourceSlot != null && sourceSlot.isEquipmentSlot && !this.isEquipmentSlot)
             {
                 sourceSlot.DeactivateVisualByItem(newItem);
@@ -90,6 +99,12 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
         isVisualHidden = !isVisualHidden;
 
+
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayClick();
+        }
+
         if (hideButtonImage != null)
         {
             hideButtonImage.color = isVisualHidden ? hiddenColor : visibleColor;
@@ -106,6 +121,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         if (characterRoot == null) return;
 
+
         foreach (Transform child in characterRoot)
         {
             if (slotType == InventoryItem.ItemType.Head && (child.name.Contains("Helmet") || child.name.Contains("Helm")))
@@ -114,7 +130,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 child.gameObject.SetActive(false);
             else if (slotType == InventoryItem.ItemType.Legs && (child.name.Contains("Leggings") || child.name.Contains("Legs")))
                 child.gameObject.SetActive(false);
-            // ДОБАВЛЕНО: Логика для аксессуаров
             else if (slotType == InventoryItem.ItemType.Accessory)
             {
                 InventoryItem currentItem = GetComponentInChildren<InventoryItem>();
@@ -124,6 +139,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 }
             }
         }
+
 
         if (!isVisualHidden)
         {

@@ -66,23 +66,23 @@ public class CharacterManager : MonoBehaviour
         {
             case 0:
                 if (guideVisual != null) guideVisual.SetActive(true);
-                descriptionText.text = $"This is {name}, appearing as the Guide. He is the first person you meet in the world of Terraria. " +
-                                       "He provides essential survival tips and shows you every recipe you can craft with the items in your inventory. " +
-                                       "Watch out for him—he’s your key to summoning the Wall of Flesh!";
+                descriptionText.text = $"This is {name}, the Guide. Your first ally in Terraria, " +
+                                       "he provides survival tips and shows every crafting recipe. " +
+                                       "But remember—he's also the key to summoning the Wall of Flesh!";
                 break;
 
             case 1:
                 if (goblinVisual != null) goblinVisual.SetActive(true);
-                descriptionText.text = $"This is {name}, taking the form of the Goblin Tinkerer. Once rescued from the underground caves, " +
-                                       "he becomes your most valuable ally for upgrading gear. He is the only one who can reforge your weapons and accessories " +
-                                       "to give them powerful modifiers, and he sells the legendary Rocket Boots.";
+                descriptionText.text = $"This is {name}, the Goblin Tinkerer. Rescued from underground, " +
+                                       "he is the only NPC who can reforge your gear with powerful modifiers. " +
+                                       "He also sells essential items like Rocket Boots and the Tinkerer's Workshop.";
                 break;
 
             case 2:
                 if (anglerVisual != null) anglerVisual.SetActive(true);
-                descriptionText.text = $"This is {name}, embodying the Angler. Don't let his small size fool you—he’s a rude little genius who sends you on " +
-                                       "dangerous daily fishing quests to find rare and exotic fish across the world. " +
-                                       "If you complete his tasks, he might reward you with a Golden Fishing Rod or a bottomless water bucket!";
+                descriptionText.text = $"This is {name}, the Angler. This rude genius sends you on " +
+                                       "daily quests to catch rare, exotic fish across the world. " +
+                                       "Complete his tasks to earn rewards like the Golden Fishing Rod or rare accessories!";
                 break;
         }
     }
