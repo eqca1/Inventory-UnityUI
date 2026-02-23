@@ -49,7 +49,7 @@
       <hr>
 
 > [!NOTE]
-> Programmas jaunāko versiju var lejupielādēt sadaļā [**Releases**](https://github.com/eqca1/Inventory-UnityUI/releases).
+> Programmas jaunāko versiju var lejupielādēt sadaļā [**Releases**](https://github.com/eqca1/Inventory-UnityUI/releases). <br>
 > Jūs varat izmēģināt arī WEB versiju [**Šeit**](https://eqca1.github.io/WEBinv/).
 
 
