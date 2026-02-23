@@ -91,11 +91,11 @@ public class CharacterManager : MonoBehaviour
     {
         if (characterImage != null)
         {
-
             float w = Mathf.Max(widthSlider.value, 0.1f);
             float h = Mathf.Max(heightSlider.value, 0.1f);
 
-            characterImage.localScale = new Vector3(w, h, 1f);
+            float currentZ = characterImage.localScale.z;
+            characterImage.localScale = new Vector3(w, h, currentZ);
         }
     }
 }
